@@ -1,0 +1,55 @@
+# This is a comment
+# You can modify the values and commands as needed.  
+# Everything up to the ';' is the test.  
+# Everything after the ';' is the expected result if there is any.  
+# error indicates an error
+# blank or no ';' means no expected output
+
+clear e
+
+# Append values to the list
+insert e Kevin
+insert e Tyler
+insert e Keegan
+insert e Jisue
+insert e Daniel
+insert e Elijah
+insert e Wan
+insert e Tobin
+insert e Michael
+insert e Anthony
+
+# Print the list
+print e ; Anthony,Daniel,Elijah,Jisue,Keegan,Kevin,Michael,Tobin,Tyler,Wan,
+
+order e 1
+
+print e ; Anthony,Daniel,Elijah,Jisue,Keegan,Kevin,Michael,Tobin,Tyler,Wan,
+
+sort e 2
+
+print e ; Wan,Jisue,Kevin,Tobin,Tyler,Daniel,Elijah,Keegan,Anthony,Michael,
+
+order e 0
+
+print e ; Michael,Anthony,Keegan,Elijah,Daniel,Tyler,Tobin,Kevin,Jisue,Wan,
+
+sort e 1
+
+print e ; Wan,Tyler,Tobin,Michael,Kevin,Keegan,Jisue,Elijah,Daniel,Anthony,
+
+clear e
+
+print e
+
+sort e 2
+order e 0
+
+insert e Kevin
+insert e Tyler
+insert e Keegan
+insert e Jisue
+
+print e ; Keegan,Tyler,Kevin,Jisue,
+
+

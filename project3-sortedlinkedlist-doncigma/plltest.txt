@@ -1,0 +1,96 @@
+# This is a comment
+# You can modify the values and commands as needed.  
+# Everything up to the ';' is the test.  
+# Everything after the ';' is the expected result if there is any.  
+# error indicates an error
+# blank or no ';' means no expected output
+
+# Append values to the list
+insert p 1
+insert p 2
+insert p 3
+insert p 4
+
+# Prepend values to the list
+insert p 0
+insert p -1
+insert p -2
+
+# Print the list
+print p ; -2,-1,0,1,2,3,4,
+
+# Insert values at ppecific positions
+insert p 5
+insert p 6
+insert p 7
+insert p -3
+insert p 200
+insert p 200
+insert p 100
+insert p -3
+insert p -2
+
+# Print the list
+print p ; -3,-3,-2,-2,-1,0,1,2,3,4,5,6,7,100,200,200,
+
+# pize
+size p ; 16
+
+# Remove p values at specific positions
+removeat p 0
+removeat p 3
+removeat p 13
+removeat p 100 ; error
+removeat p -1 ; error
+
+# pize
+size p ; 13
+
+# Print the list
+print p ; -3,-2,-2,0,1,2,3,4,5,6,7,100,200,
+
+# Get values at ppecific positions
+get p 0 ; -3
+get p 2 ; -2
+get p 4 ; 1
+get p -1 ; error
+get p 1000 ; error
+
+# Find values in the list
+find p 0 ; 0
+find p 5 ; 5
+find p 400 ; error
+
+# Find the index of values in the list
+findindex p 0 ; 3
+findindex p 5 ; 8
+findindex p 300 ; error
+
+# Print the list
+print p ; -3,-2,-2,0,1,2,3,4,5,6,7,100,200,
+size p ; 13
+empty p ; 0
+
+# Clear the list
+clear p
+size p ; 0
+empty p ; 1
+
+# Print the list again to confirm it's empty
+print p ;
+
+# Check empty condition
+findindex p 2 ; error
+find p 1 ; error
+get p 0 ; error
+removeat p 3 ; error
+removeat p -1 ; error
+
+#1 item in list
+insert p 14
+findindex p 2 ; error
+find p 1 ; error
+get p 0 ; 14
+removeat p 3 ; error
+removeat p -1 ; error
+

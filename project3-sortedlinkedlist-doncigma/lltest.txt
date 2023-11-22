@@ -1,0 +1,74 @@
+# This is a comment
+# Each line is a command to test your linked list implementation
+# You can modify the values and commands as needed.  
+# Everything up to the ';' is the test.  
+# Everything after the ';' is the expected result if there is any.  
+# error indicates an error
+# blank or no ';' means no expected output
+
+# Append values to the list
+append u 1
+append u 2
+append u 3
+append u 4
+
+# Prepend values to the list
+prepend u 0
+prepend u -1
+prepend u -2
+
+# Print the list
+print u ; -2,-1,0,1,2,3,4,
+
+# Insert values at specific positions
+insertat u 5 5
+insertat u 6 6
+insertat u 7 7
+insertat u -3 0
+insertat u 200 11
+
+# Remove u values at specific positions
+removeat u 0
+removeat u 3
+removeat u 6
+removeat u 100 ; error
+
+# Print the list
+print u ; -2,-1,0,2,5,6,3,4,200,
+
+# Get values at specific positions
+get u 0 ; -2
+get u 2 ; 0
+get u 4 ; 5
+get u -1 ; error
+get u 1000 ; error
+
+# Find values in the list
+find u 0 ; 0
+find u 5 ; 5
+find u 100 ; error
+
+# Find the index of values in the list
+findindex u 0 ; 2
+findindex u 5 ; 4
+findindex u 300 ; error
+
+# Print the list
+print u ; -2,-1,0,2,5,6,3,4,200,
+size u ; 9
+empty u ; 0
+
+# Clear the list
+clear u
+size u ; 0
+empty u ; 1
+
+# Print the list again to confirm it's empty
+print u ;
+
+# Check empty condition
+findindex u 2 ; error
+find u 1 ; error
+get u 0 ; error
+removeat u 3 ; error
+removeat u -1 ; error

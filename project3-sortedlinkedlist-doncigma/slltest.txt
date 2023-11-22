@@ -1,0 +1,96 @@
+# This is a comment
+# You can modify the values and commands as needed.  
+# Everything up to the ';' is the test.  
+# Everything after the ';' is the expected result if there is any.  
+# error indicates an error
+# blank or no ';' means no expected output
+
+# Append values to the list
+insert s 1
+insert s 2
+insert s 3
+insert s 4
+
+# Prepend values to the list
+insert s 0
+insert s -1
+insert s -2
+
+# Print the list
+print s ; -2,-1,0,1,2,3,4,
+
+# Insert values at specific positions
+insert s 5
+insert s 6
+insert s 7
+insert s -3
+insert s 200
+insert s 200
+insert s 100
+insert s -3
+insert s -2
+
+# Print the list
+print s ; -3,-3,-2,-2,-1,0,1,2,3,4,5,6,7,100,200,200,
+
+# size
+size s ; 16
+
+# Remove s values at specific positions
+removeat s 0
+removeat s 3
+removeat s 13
+removeat s 100 ; error
+removeat s -1 ; error
+
+# size
+size s ; 13
+
+# Print the list
+print s ; -3,-2,-2,0,1,2,3,4,5,6,7,100,200,
+
+# Get values at specific positions
+get s 0 ; -3
+get s 2 ; -2
+get s 4 ; 1
+get s -1 ; error
+get s 1000 ; error
+
+# Find values in the list
+find s 0 ; 0
+find s 5 ; 5
+find s 400 ; error
+
+# Find the index of values in the list
+findindex s 0 ; 3
+findindex s 5 ; 8
+findindex s 300 ; error
+
+# Print the list
+print s ; -3,-2,-2,0,1,2,3,4,5,6,7,100,200,
+size s ; 13
+empty s ; 0
+
+# Clear the list
+clear s
+size s ; 0
+empty s ; 1
+
+# Print the list again to confirm it's empty
+print s ;
+
+# Check empty condition
+findindex s 2 ; error
+find s 1 ; error
+get s 0 ; error
+removeat s 3 ; error
+removeat s -1 ; error
+
+#1 item in list
+insert s 14
+findindex s 2 ; error
+find s 1 ; error
+get s 0 ; 14
+removeat s 3 ; error
+removeat s -1 ; error
+
